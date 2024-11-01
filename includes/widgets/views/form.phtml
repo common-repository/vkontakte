@@ -1,0 +1,18 @@
+<?php
+/**
+ * @var array $instance
+ * @var array $fields
+ * @var Vkontakte_Widget $widget
+ */
+?>
+
+<?php foreach ( $fields as $field ): ?>
+	<p>
+		<?php if ( $field['label'] && ! $field['inline_label'] ): ?>
+			<label<?php if ( $field['id'] ): ?> for="<?php echo esc_attr( $field['id'] ); ?>"<?php endif; ?>>
+				<?php echo esc_html( $field['label'] ); ?>
+			</label>
+		<?php endif; ?>
+		<?php Vkontakte_Admin_Form::output_field( $field ); ?>
+	</p>
+<?php endforeach; ?>
